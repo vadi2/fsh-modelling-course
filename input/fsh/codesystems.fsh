@@ -1,7 +1,7 @@
 // CodeSystems for FSH Modelling Course - Animal Registry
 
-CodeSystem: AnimalTypes
-Id: animal-types
+CodeSystem: AnimalTypesCS
+Id: animal-types-cs
 Title: "Animal Types"
 Description: "A code system defining different types of animals in the registry"
 * ^status = #active
@@ -17,8 +17,8 @@ Description: "A code system defining different types of animals in the registry"
 * #reptile "Reptile" "Reptilian species including snakes, lizards, turtles"
 * #wildlife "Wildlife" "Wild animals in rehabilitation or conservation programs"
 
-CodeSystem: AnimalBreeds
-Id: animal-breeds
+CodeSystem: AnimalBreedsCS
+Id: animal-breeds-cs
 Title: "Animal Breeds"
 Description: "A code system defining different breeds of animals"
 * ^status = #active
@@ -48,8 +48,8 @@ Description: "A code system defining different breeds of animals"
 // Other
 * #unknown-breed "Unknown Breed" "Breed is unknown or not specified"
 
-CodeSystem: ConservationStatus
-Id: conservation-status
+CodeSystem: ConservationStatusCS
+Id: conservation-status-cs
 Title: "Conservation Status"
 Description: "Conservation status categories based on IUCN Red List classifications"
 * ^status = #active
