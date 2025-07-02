@@ -9,16 +9,22 @@ Description: "A profile representing an animal in the registry system"
 * ^status = #active
 * ^experimental = false
 
-// Required extensions
+// Mix of standard and custom extensions
 * extension contains
-    AnimalSpecies named species 1..1 and
+    http://hl7.org/fhir/StructureDefinition/patient-animal named animal 1..1 and
     AnimalName named name 0..1 and
     AnimalWeight named weight 0..1 and
-    AnimalCharacteristics named characteristics 0..1 and
     AnimalCaregiver named caregiver 0..* and
     RescueDate named rescueDate 0..1 and
     Neutered named neutered 0..1 and
     VeterinaryHistory named veterinaryHistory 0..1
+
+// Configure the standard animal extension
+* extension[animal].extension[species] 1..1
+* extension[animal].extension[species].valueCodeableConcept from AnimalTypesVS (required)
+* extension[animal].extension[breed] 0..1
+* extension[animal].extension[breed].valueCodeableConcept from AnimalBreedsVS (preferred)
+* extension[animal].extension[genderStatus] 0..1
 
 // Constrain Patient fields for animals
 * active 1..1
@@ -52,7 +58,7 @@ Description: "A profile for domestic animals (pets)"
 * ^status = #active
 * ^experimental = false
 
-* extension[species].valueCodeableConcept from DomesticAnimalsVS (required)
+* extension[animal].extension[species].valueCodeableConcept from DomesticAnimalsVS (required)
 * extension[caregiver] 1..*
 * extension[neutered] 1..1
 * generalPractitioner 1..*
@@ -66,8 +72,10 @@ Description: "A profile for wildlife animals in conservation or rehabilitation"
 * ^experimental = false
 
 * modifierExtension contains EndangeredStatus named endangeredStatus 0..1
-* extension[species].valueCodeableConcept from AnimalTypesVS (required)
+* extension[animal].extension[species].valueCodeableConcept from AnimalTypesVS (required)
 * extension[rescueDate] 1..1
+
+* extension contains animal-characteristics named characteristics 0..1
 * extension[characteristics].extension[microchipId] 1..1
 * managingOrganization 1..1
 

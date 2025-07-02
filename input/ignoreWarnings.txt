@@ -3,3 +3,6 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# Seems to be a publisher issue
+No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/designation-usage' 

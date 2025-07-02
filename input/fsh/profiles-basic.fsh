@@ -9,20 +9,24 @@ Description: "A simplified animal profile for teaching basic FSH concepts"
 * ^status = #active
 * ^experimental = false
 
-// Method 1: Required extension
-* extension contains AnimalSpecies named species 1..1
+// Method 1: Required standard extension
+* extension contains http://hl7.org/fhir/StructureDefinition/patient-animal named animal 1..1
+
+// Configure the standard animal extension
+* extension[animal].extension[species] 1..1
+* extension[animal].extension[species].valueCodeableConcept from AnimalTypesVS (required)
 
 // Method 2: Cardinality constraints
-* active 1..1 // Make required
-* gender 1..1 // Make required
-* name 0..0 // Remove entirely
-* telecom 0..0 // Remove entirely
+* active 1..1
+* gender 1..1
+* name 0..0
+* telecom 0..0
 
 // Method 3: Fixed values
 * active = true
 
 // Method 4: Datatype constraints
-* photo 0..3 // Limit to 3 photos max
+* photo 0..3
 
 // Method 5: Reference constraints
 * generalPractitioner only Reference(Practitioner)
