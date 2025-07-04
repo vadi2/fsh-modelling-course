@@ -12,7 +12,6 @@ Description: "A profile representing an animal in the registry system"
 // Mix of standard and custom extensions
 * extension contains
     http://hl7.org/fhir/StructureDefinition/patient-animal named animal 1..1 and
-    AnimalWeight named weight 0..1 and
     AnimalCaregiver named caregiver 0..* and
     RescueDate named rescueDate 0..1 and
     Neutered named neutered 0..1 and
@@ -87,7 +86,6 @@ Description: "An animal currently receiving veterinary care"
 * ^status = #active
 * ^experimental = false
 
-* extension[weight] 1..1
 * extension[veterinaryHistory] 1..1
 * generalPractitioner 1..1
 * active = true
@@ -101,14 +99,7 @@ Description: "Demonstrates custom validation rules for animals"
 * ^status = #active
 * ^experimental = false
 
-* obeys animal-weight-reasonable
 * obeys animal-birth-date-valid
-
-// Define the invariants
-Invariant: animal-weight-reasonable
-Description: "Animal weight should be reasonable (between 0.1kg and 1000kg)"
-Expression: "extension.where(url='http://example.org/fsh-modelling-course/StructureDefinition/animal-weight').value.value > 0.1 and extension.where(url='http://example.org/fsh-modelling-course/StructureDefinition/animal-weight').value.value < 1000"
-Severity: #warning
 
 Invariant: animal-birth-date-valid
 Description: "Animal birth date cannot be in the future"

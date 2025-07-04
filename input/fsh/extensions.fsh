@@ -12,17 +12,6 @@ Description: "The specific species of the animal"
 * value[x] only CodeableConcept
 * valueCodeableConcept from $AnimalTypesVS (required)
 
-// ExampleSimple extension with Quantity (for weight)
-Extension: AnimalWeight
-Id: animal-weight
-Title: "Animal Weight"
-Description: "The weight of the animal"
-* ^status = #active
-* ^experimental = false
-* ^context.type = #element
-* ^context.expression = "Patient"
-* value[x] only Quantity
-* valueQuantity.code from http://hl7.org/fhir/ValueSet/ucum-bodyweight (required)
 
 // ExampleComplex extension with multiple sub-extensions
 Extension: AnimalCharacteristics

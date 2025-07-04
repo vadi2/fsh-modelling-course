@@ -15,6 +15,18 @@ Description: "A minimal example with basic concepts"
 * photo[0].contentType = #image/jpeg
 * photo[0].title = "Simple rabbit photo"
 
+// Weight observation for simple animal
+Instance: SimpleAnimalWeightObservation
+InstanceOf: Observation
+Title: "Simple Animal Weight"
+Description: "Weight observation for the simple rabbit"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
+* code = http://loinc.org#29463-7 "Body weight"
+* subject = Reference(SimpleAnimalExample)
+* effectiveDateTime = "2024-01-15"
+* valueQuantity = 2.1 'kg' "kg"
+
 // Example: Basic domestic dog
 Instance: BuddyTheGoldenRetriever
 InstanceOf: DomesticAnimal
@@ -30,13 +42,24 @@ Description: "A typical pet dog registration example"
 * extension[animal].extension[breed].valueCodeableConcept = $AnimalBreedsCS#golden-retriever "Golden Retriever"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
-// Custom extensions
-* extension[weight].valueQuantity = 32 'kg' "kg"
 * extension[neutered].valueBoolean = true
 * extension[caregiver].valueReference = Reference(JohnSmithOwner)
 
 // Veterinarian
 * generalPractitioner = Reference(DrVetSmith)
+
+// Weight observation for Buddy
+Instance: BuddyWeightObservation
+InstanceOf: Observation
+Title: "Buddy's Weight"
+Description: "Current weight observation for Buddy"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
+* code = http://loinc.org#29463-7 "Body weight"
+* subject = Reference(BuddyTheGoldenRetriever)
+* effectiveDateTime = "2024-01-20"
+* valueQuantity = 32 'kg' "kg"
+* performer = Reference(DrVetSmith)
 
 // Example: Rescued cat
 Instance: WhiskersThePersian
@@ -53,8 +76,6 @@ Description: "A rescued Persian cat with medical history"
 * extension[animal].extension[breed].valueCodeableConcept = $AnimalBreedsCS#persian "Persian"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#intact "Intact"
 
-// Custom extensions
-* extension[weight].valueQuantity = 4.2 'kg' "kg"
 * extension[rescueDate].valueDate = "2023-01-10"
 * extension[neutered].valueBoolean = false
 * extension[caregiver].valueReference = Reference(AnimalShelter)
@@ -68,6 +89,19 @@ Description: "A rescued Persian cat with medical history"
 
 * generalPractitioner = Reference(DrVetJones)
 * managingOrganization = Reference(AnimalShelter)
+
+// Weight observation for Whiskers
+Instance: WhiskersWeightObservation
+InstanceOf: Observation
+Title: "Whiskers' Weight"
+Description: "Current weight observation for Whiskers"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
+* code = http://loinc.org#29463-7 "Body weight"
+* subject = Reference(WhiskersThePersian)
+* effectiveDateTime = "2024-01-15"
+* valueQuantity = 4.2 'kg' "kg"
+* performer = Reference(DrVetJones)
 
 // Example: Wildlife animal
 Instance: EagleInRehab
@@ -83,7 +117,6 @@ Description: "An endangered bald eagle in wildlife rehabilitation"
 * extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#wildlife "Wildlife"
 
 // Custom extensions
-* extension[weight].valueQuantity = 4.5 'kg' "kg"
 * extension[rescueDate].valueDate = "2023-08-15"
 * modifierExtension[endangeredStatus].valueCodeableConcept = $ConservationStatusCS#NT "Near Threatened"
 
@@ -111,7 +144,6 @@ Description: "A dog currently receiving veterinary treatment"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
 // Required for veterinary patient
-* extension[weight].valueQuantity = 28.5 'kg' "kg"
 * extension[neutered].valueBoolean = true
 
 // Complete veterinary history
