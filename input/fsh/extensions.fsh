@@ -1,6 +1,6 @@
 // Extensions for FSH Modelling Course - Animal Registry
 
-// Method 1: Simple extension with CodeableConcept
+// ExampleSimple extension with CodeableConcept
 Extension: AnimalSpecies
 Id: animal-species
 Title: "Animal Species"
@@ -12,18 +12,7 @@ Description: "The specific species of the animal"
 * value[x] only CodeableConcept
 * valueCodeableConcept from $AnimalTypesVS (required)
 
-// Method 2: Simple extension with string
-Extension: AnimalName
-Id: animal-name
-Title: "Animal Name"
-Description: "The common or pet name of the animal"
-* ^status = #active
-* ^experimental = false
-* ^context.type = #element
-* ^context.expression = "Patient"
-* value[x] only string
-
-// Method 3: Simple extension with Quantity (for weight)
+// ExampleSimple extension with Quantity (for weight)
 Extension: AnimalWeight
 Id: animal-weight
 Title: "Animal Weight"
@@ -35,7 +24,7 @@ Description: "The weight of the animal"
 * value[x] only Quantity
 * valueQuantity.code from http://hl7.org/fhir/ValueSet/ucum-bodyweight (required)
 
-// Method 4: Complex extension with multiple sub-extensions
+// ExampleComplex extension with multiple sub-extensions
 Extension: AnimalCharacteristics
 Id: animal-characteristics
 Title: "Animal Physical Characteristics"
@@ -68,7 +57,7 @@ Description: "Physical characteristics and attributes of the animal"
 * extension[microchipId] ^definition = "Microchip identification number if present"
 * extension[microchipId].value[x] only string
 
-// Method 5: Modifier extension (changes meaning of the resource)
+// ExampleModifier extension (changes meaning of the resource)
 Extension: EndangeredStatus
 Id: endangered-status
 Title: "Endangered Status (modifier)"
@@ -82,7 +71,7 @@ Description: "Conservation status that may affect how the animal is handled"
 * value[x] only CodeableConcept
 * valueCodeableConcept from $ConservationStatusVS (required)
 
-// Method 6: Extension with Reference datatype
+// ExampleExtension with Reference datatype
 Extension: AnimalCaregiver
 Id: animal-caregiver
 Title: "Animal Caregiver"
@@ -93,7 +82,7 @@ Description: "Reference to the primary caregiver or owner of the animal"
 * ^context.expression = "Patient"
 * value[x] only Reference(Practitioner or RelatedPerson or Organization)
 
-// Method 7: Extension with date
+// ExampleExtension with date
 Extension: RescueDate
 Id: rescue-date
 Title: "Animal Rescue Date"
@@ -104,7 +93,7 @@ Description: "Date when the animal was rescued or taken into care"
 * ^context.expression = "Patient"
 * value[x] only date
 
-// Method 8: Extension with boolean
+// ExampleExtension with boolean
 Extension: Neutered
 Id: neutered
 Title: "Neutered Status"
@@ -115,7 +104,7 @@ Description: "Whether the animal has been spayed or neutered"
 * ^context.expression = "Patient"
 * value[x] only boolean
 
-// Method 9: Nested complex extension
+// ExampleNested complex extension
 Extension: VeterinaryHistory
 Id: veterinary-history
 Title: "Veterinary History"

@@ -23,6 +23,7 @@ Description: "A typical pet dog registration example"
 * active = true
 * gender = #male
 * birthDate = "2020-03-15"
+* name.text = "Buddy"
 
 // Standard animal extension
 * extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#dog "Dog"
@@ -30,7 +31,6 @@ Description: "A typical pet dog registration example"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
 // Custom extensions
-* extension[name].valueString = "Buddy"
 * extension[weight].valueQuantity = 32 'kg' "kg"
 * extension[neutered].valueBoolean = true
 * extension[caregiver].valueReference = Reference(JohnSmithOwner)
@@ -46,6 +46,7 @@ Description: "A rescued Persian cat with medical history"
 * active = true
 * gender = #female
 * birthDate = "2019-07-22"
+* name.text = "Whiskers"
 
 // Standard animal extension
 * extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#cat "Cat"
@@ -53,7 +54,6 @@ Description: "A rescued Persian cat with medical history"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#intact "Intact"
 
 // Custom extensions
-* extension[name].valueString = "Whiskers"
 * extension[weight].valueQuantity = 4.2 'kg' "kg"
 * extension[rescueDate].valueDate = "2023-01-10"
 * extension[neutered].valueBoolean = false
@@ -77,12 +77,12 @@ Description: "An endangered bald eagle in wildlife rehabilitation"
 * active = true
 * gender = #female
 * birthDate = "2022-05-01"
+* name.text = "Liberty"
 
 // Standard animal extension
 * extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#wildlife "Wildlife"
 
 // Custom extensions
-* extension[name].valueString = "Liberty"
 * extension[weight].valueQuantity = 4.5 'kg' "kg"
 * extension[rescueDate].valueDate = "2023-08-15"
 * modifierExtension[endangeredStatus].valueCodeableConcept = $ConservationStatusCS#NT "Near Threatened"
@@ -103,6 +103,7 @@ Description: "A dog currently receiving veterinary treatment"
 * active = true
 * gender = #male
 * birthDate = "2021-11-03"
+* name.text = "Max"
 
 // Standard animal extension
 * extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#dog "Dog"
@@ -110,7 +111,6 @@ Description: "A dog currently receiving veterinary treatment"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
 // Required for veterinary patient
-* extension[name].valueString = "Max"
 * extension[weight].valueQuantity = 28.5 'kg' "kg"
 * extension[neutered].valueBoolean = true
 

@@ -12,7 +12,6 @@ Description: "A profile representing an animal in the registry system"
 // Mix of standard and custom extensions
 * extension contains
     http://hl7.org/fhir/StructureDefinition/patient-animal named animal 1..1 and
-    AnimalName named name 0..1 and
     AnimalWeight named weight 0..1 and
     AnimalCaregiver named caregiver 0..* and
     RescueDate named rescueDate 0..1 and
