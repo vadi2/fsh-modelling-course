@@ -61,6 +61,7 @@ Description: "Conservation status that may affect how the animal is handled"
 * valueCodeableConcept from $ConservationStatusVS (required)
 
 // ExampleExtension with Reference datatype
+// Not used, for example purposes only
 Extension: AnimalCaregiver
 Id: animal-caregiver
 Title: "Animal Caregiver"
@@ -94,6 +95,7 @@ Description: "Whether the animal has been spayed or neutered"
 * value[x] only boolean
 
 // ExampleNested complex extension
+// Not used, for example purposes only. This should be done with proper FHIR resources instead.
 Extension: VeterinaryHistory
 Id: veterinary-history
 Title: "Veterinary History"

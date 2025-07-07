@@ -37,13 +37,18 @@ Description: "A typical pet dog registration example"
 * birthDate = "2020-03-15"
 * name.text = "Buddy"
 
-// Standard animal extension
 * extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#dog "Dog"
 * extension[animal].extension[breed].valueCodeableConcept = $AnimalBreedsCS#golden-retriever "Golden Retriever"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
 * extension[neutered].valueBoolean = true
-* extension[caregiver].valueReference = Reference(JohnSmithOwner)
+
+* contact[0].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
+* contact[0].name.text = "John Smith"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "555-123-4567"
+* contact[0].telecom[1].system = #email
+* contact[0].telecom[1].value = "john.smith@email.com"
 
 // Veterinarian
 * generalPractitioner = Reference(DrVetSmith)
@@ -78,14 +83,12 @@ Description: "A rescued Persian cat with medical history"
 
 * extension[rescueDate].valueDate = "2023-01-10"
 * extension[neutered].valueBoolean = false
-* extension[caregiver].valueReference = Reference(AnimalShelter)
 
-// Veterinary history
-* extension[veterinaryHistory].extension[lastCheckup].valueDate = "2024-01-15"
-* extension[veterinaryHistory].extension[vaccinations].valueString = "FVRCP current, rabies due 2024-07-22"
-* extension[veterinaryHistory].extension[chronicConditions].valueString = "Mild kidney disease"
-* extension[veterinaryHistory].extension[allergies].valueString = "Chicken protein"
-* extension[veterinaryHistory].extension[medications].valueString = "Kidney support supplement daily"
+// Use contact for shelter caregiver
+* contact[0].name.text = "City Animal Shelter"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "555-SHELTER"
+* contact[0].organization = Reference(AnimalShelter)
 
 * generalPractitioner = Reference(DrVetJones)
 * managingOrganization = Reference(AnimalShelter)
@@ -120,11 +123,6 @@ Description: "An endangered bald eagle in wildlife rehabilitation"
 * extension[rescueDate].valueDate = "2023-08-15"
 * modifierExtension[endangeredStatus].valueCodeableConcept = $ConservationStatusCS#NT "Near Threatened"
 
-// Veterinary history for rehabilitation
-* extension[veterinaryHistory].extension[lastCheckup].valueDate = "2024-01-20"
-* extension[veterinaryHistory].extension[chronicConditions].valueString = "Wing fracture - healing well"
-* extension[veterinaryHistory].extension[medications].valueString = "Pain management as needed"
-
 * generalPractitioner = Reference(DrWildlifeVet)
 * managingOrganization = Reference(WildlifeRehabCenter)
 
@@ -146,14 +144,16 @@ Description: "A dog currently receiving veterinary treatment"
 // Required for veterinary patient
 * extension[neutered].valueBoolean = true
 
-// Complete veterinary history
-* extension[veterinaryHistory].extension[lastCheckup].valueDate = "2024-01-25"
-* extension[veterinaryHistory].extension[vaccinations].valueString = "All current - DHPP, rabies, bordetella"
-* extension[veterinaryHistory].extension[chronicConditions].valueString = "Hip dysplasia"
-* extension[veterinaryHistory].extension[allergies].valueString = "Beef, environmental allergens"
-* extension[veterinaryHistory].extension[medications].valueString = "Joint supplement, antihistamine PRN"
+// Use contact for family caregiver
+* contact[0].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
+* contact[0].name.text = "Johnson Family"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "555-987-6543"
+* contact[0].telecom[1].system = #email
+* contact[0].telecom[1].value = "johnson.family@email.com"
+* contact[0].address.line = "123 Main Street"
+* contact[0].address.city = "Anytown"
+* contact[0].address.state = "ST"
+* contact[0].address.postalCode = "12345"
 
-* extension[caregiver].valueReference = Reference(FamilyCaregiver)
 * generalPractitioner = Reference(DrVetSmith)
-
-

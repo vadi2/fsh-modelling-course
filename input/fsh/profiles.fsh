@@ -12,10 +12,8 @@ Description: "A profile representing an animal in the registry system"
 // Mix of standard and custom extensions
 * extension contains
     http://hl7.org/fhir/StructureDefinition/patient-animal named animal 1..1 and
-    AnimalCaregiver named caregiver 0..* and
     RescueDate named rescueDate 0..1 and
-    Neutered named neutered 0..1 and
-    VeterinaryHistory named veterinaryHistory 0..1
+    Neutered named neutered 0..1
 
 // Configure the standard animal extension
 * extension[animal].extension[species] 1..1
@@ -33,6 +31,14 @@ Description: "A profile representing an animal in the registry system"
 * multipleBirth[x] 0..1
 * photo 0..*
 * generalPractitioner 0..*
+
+// Configure contact for caregivers
+* contact 0..*
+* contact ^short = "Animal caregiver/owner contact information"
+* contact ^definition = "Contact information for the animal's caregiver, owner, or responsible party"
+* contact.relationship 1..*
+* contact.relationship ^short = "Relationship to animal"
+* contact.relationship ^definition = "The relationship of the contact to the animal (owner, caregiver, emergency contact, etc.)"
 
 // Add constraints with explanations
 * gender ^short = "Animal sex"
@@ -57,7 +63,8 @@ Description: "A profile for domestic animals (pets)"
 * ^experimental = false
 
 * extension[animal].extension[species].valueCodeableConcept from DomesticAnimalsVS (required)
-* extension[caregiver] 1..*
+* contact 1..*
+* contact.relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
 * extension[neutered] 1..1
 * generalPractitioner 1..*
 
@@ -86,7 +93,6 @@ Description: "An animal currently receiving veterinary care"
 * ^status = #active
 * ^experimental = false
 
-* extension[veterinaryHistory] 1..1
 * generalPractitioner 1..1
 * active = true
 
@@ -102,6 +108,6 @@ Description: "Demonstrates custom validation rules for animals"
 * obeys animal-birth-date-valid
 
 Invariant: animal-birth-date-valid
-Description: "Animal birth date cannot be in the future"
+Description: "Animal birth date cannot be future"
 Expression: "birthDate.empty() or birthDate <= today()"
 Severity: #error
