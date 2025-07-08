@@ -10,10 +10,7 @@ Description: "A minimal example with basic concepts"
 * birthDate = "2023-06-01"
 
 // Just the required standard extension
-* extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#rabbit "Rabbit"
-
-* photo[0].contentType = #image/jpeg
-* photo[0].title = "Simple rabbit photo"
+* extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#rabbit "Rabbit"
 
 // Weight observation for simple animal
 Instance: SimpleAnimalWeightObservation
@@ -37,8 +34,8 @@ Description: "A typical pet dog registration example"
 * birthDate = "2020-03-15"
 * name.text = "Buddy"
 
-* extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#dog "Dog"
-* extension[animal].extension[breed].valueCodeableConcept = $AnimalBreedsCS#golden-retriever "Golden Retriever"
+* extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#dog "Dog"
+* extension[animal].extension[breed].valueCodeableConcept = AnimalBreedsCS#golden-retriever "Golden Retriever"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
 * extension[neutered].valueBoolean = true
@@ -77,8 +74,8 @@ Description: "A rescued Persian cat with medical history"
 * name.text = "Whiskers"
 
 // Standard animal extension
-* extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#cat "Cat"
-* extension[animal].extension[breed].valueCodeableConcept = $AnimalBreedsCS#persian "Persian"
+* extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#cat "Cat"
+* extension[animal].extension[breed].valueCodeableConcept = AnimalBreedsCS#persian "Persian"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#intact "Intact"
 
 * extension[rescueDate].valueDate = "2023-01-10"
@@ -117,11 +114,11 @@ Description: "An endangered bald eagle in wildlife rehabilitation"
 * name.text = "Liberty"
 
 // Standard animal extension
-* extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#wildlife "Wildlife"
+* extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#wildlife "Wildlife"
 
 // Custom extensions
 * extension[rescueDate].valueDate = "2023-08-15"
-* modifierExtension[endangeredStatus].valueCodeableConcept = $ConservationStatusCS#NT "Near Threatened"
+* modifierExtension[endangeredStatus].valueCodeableConcept = ConservationStatusCS#NT "Near Threatened"
 
 * generalPractitioner = Reference(DrWildlifeVet)
 * managingOrganization = Reference(WildlifeRehabCenter)
@@ -137,8 +134,8 @@ Description: "A dog currently receiving veterinary treatment"
 * name.text = "Max"
 
 // Standard animal extension
-* extension[animal].extension[species].valueCodeableConcept = $AnimalTypesCS#dog "Dog"
-* extension[animal].extension[breed].valueCodeableConcept = $AnimalBreedsCS#mixed-dog "Mixed Breed Dog"
+* extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#dog "Dog"
+* extension[animal].extension[breed].valueCodeableConcept = AnimalBreedsCS#mixed-dog "Mixed Breed Dog"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
 // Required for veterinary patient

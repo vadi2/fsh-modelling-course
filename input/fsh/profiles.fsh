@@ -1,5 +1,3 @@
-// Profiles for FSH Modelling Course - Animal Registry
-
 // Main Animal Profile based on Patient
 Profile: Animal
 Parent: Patient

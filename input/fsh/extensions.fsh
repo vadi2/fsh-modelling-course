@@ -1,6 +1,7 @@
 // Extensions for FSH Modelling Course - Animal Registry
 
 // ExampleSimple extension with CodeableConcept
+// not used, for example purposes only
 Extension: AnimalSpecies
 Id: animal-species
 Title: "Animal Species"
@@ -10,7 +11,7 @@ Description: "The specific species of the animal"
 * ^context.type = #element
 * ^context.expression = "Patient"
 * value[x] only CodeableConcept
-* valueCodeableConcept from $AnimalTypesVS (required)
+* valueCodeableConcept from AnimalTypesVS (required)
 
 
 // ExampleComplex extension with multiple sub-extensions
@@ -32,7 +33,7 @@ Description: "Physical characteristics and attributes of the animal"
 * extension[breed] ^short = "Animal breed"
 * extension[breed] ^definition = "The breed of the animal"
 * extension[breed].value[x] only CodeableConcept
-* extension[breed].valueCodeableConcept from $AnimalBreedsVS (preferred)
+* extension[breed].valueCodeableConcept from AnimalBreedsVS (preferred)
 
 * extension[color] ^short = "Animal color(s)"
 * extension[color] ^definition = "Primary and secondary colors of the animal"
@@ -58,7 +59,7 @@ Description: "Conservation status that may affect how the animal is handled"
 * . ^isModifier = true
 * . ^isModifierReason = "Indicates the animal is under special conservation measures"
 * value[x] only CodeableConcept
-* valueCodeableConcept from $ConservationStatusVS (required)
+* valueCodeableConcept from ConservationStatusVS (required)
 
 // ExampleExtension with Reference datatype
 // Not used, for example purposes only
