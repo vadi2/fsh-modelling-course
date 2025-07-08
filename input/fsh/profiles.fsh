@@ -24,14 +24,8 @@ Description: "A profile representing an animal in the registry system"
 * active 1..1
 * active = true
 * gender 1..1
-* birthDate 0..1
-* deceased[x] 0..1
-* multipleBirth[x] 0..1
-* photo 0..*
-* generalPractitioner 0..*
 
 // Configure contact for caregivers
-* contact 0..*
 * contact ^short = "Animal caregiver/owner contact information"
 * contact ^definition = "Contact information for the animal's caregiver, owner, or responsible party"
 * contact.relationship 1..*
