@@ -13,7 +13,7 @@ This is a teaching project that demonstrates FSH (FHIR Shorthand) fundamentals u
 To build this implementation guide:
 
 1. Install SUSHI: `npm install -g fsh-sushi`
-2. Run SUSHI: `sushi .`
+2. Install IG publisher: `./_updatePublisher.sh` (or `_updatePublisher.bat` on Windows)
 3. Run IG Publisher: `_genonce.sh` (or `_genonce.bat` on Windows)
 
 ## Course Modules
