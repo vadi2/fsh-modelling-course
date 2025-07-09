@@ -1,6 +1,6 @@
 // Extensions for FSH Modelling Course - Animal Registry
 
-// ExampleSimple extension with CodeableConcept
+// Simple extension with CodeableConcept
 // not used, for example purposes only
 Extension: AnimalSpecies
 Id: animal-species
@@ -14,7 +14,7 @@ Description: "The specific species of the animal"
 * valueCodeableConcept from AnimalTypesVS (required)
 
 
-// ExampleComplex extension with multiple sub-extensions
+// Complex extension with multiple sub-extensions
 Extension: AnimalCharacteristics
 Id: animal-characteristics
 Title: "Animal Physical Characteristics"
@@ -47,7 +47,7 @@ Description: "Physical characteristics and attributes of the animal"
 * extension[microchipId] ^definition = "Microchip identification number if present"
 * extension[microchipId].value[x] only string
 
-// ExampleModifier extension (changes meaning of the resource)
+// Modifier extension (changes meaning of the resource)
 Extension: EndangeredStatus
 Id: endangered-status
 Title: "Endangered Status (modifier)"
@@ -61,7 +61,7 @@ Description: "Conservation status that may affect how the animal is handled"
 * value[x] only CodeableConcept
 * valueCodeableConcept from ConservationStatusVS (required)
 
-// ExampleExtension with Reference datatype
+// Extension with Reference datatype
 // Not used, for example purposes only
 Extension: AnimalCaregiver
 Id: animal-caregiver
@@ -73,7 +73,7 @@ Description: "Reference to the primary caregiver or owner of the animal"
 * ^context.expression = "Patient"
 * value[x] only Reference(Practitioner or RelatedPerson or Organization)
 
-// ExampleExtension with date
+// Extension with date
 Extension: RescueDate
 Id: rescue-date
 Title: "Animal Rescue Date"
@@ -84,7 +84,7 @@ Description: "Date when the animal was rescued or taken into care"
 * ^context.expression = "Patient"
 * value[x] only date
 
-// ExampleExtension with boolean
+// Extension with boolean
 Extension: Neutered
 Id: neutered
 Title: "Neutered Status"
@@ -95,7 +95,7 @@ Description: "Whether the animal has been spayed or neutered"
 * ^context.expression = "Patient"
 * value[x] only boolean
 
-// ExampleNested complex extension
+// Nested complex extension
 // Not used, for example purposes only. This should be done with proper FHIR resources instead.
 Extension: VeterinaryHistory
 Id: veterinary-history
