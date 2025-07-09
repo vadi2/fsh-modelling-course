@@ -1,6 +1,6 @@
 // ValueSets for FSH Modelling Course - Animal Registry
 
-// Method 1: Simple inclusion of entire CodeSystem
+// Simple inclusion of entire CodeSystem
 ValueSet: AnimalTypesVS
 Id: animal-types-vs
 Title: "Animal Types"
@@ -9,7 +9,7 @@ Description: "All animal types available in the registry"
 * ^experimental = false
 * include codes from system AnimalTypesCS
 
-// Method 2: Selective inclusion with specific codes
+// Selective inclusion with specific codes
 ValueSet: DomesticAnimalsVS
 Id: domestic-animals-vs
 Title: "Domestic Animals"
@@ -20,10 +20,9 @@ Description: "Common domestic animals suitable for household pets"
 * include AnimalTypesCS#cat
 * include AnimalTypesCS#bird
 * include AnimalTypesCS#rabbit
-* include AnimalTypesCS#hamster
 * include AnimalTypesCS#fish
 
-// Method 3: Exclusion pattern - include all except specific codes
+// Exclusion pattern - include all except specific codes
 ValueSet: NonWildlifeAnimalsVS
 Id: non-wildlife-animals-vs
 Title: "Non-Wildlife Animals"
@@ -33,7 +32,7 @@ Description: "All animal types except wildlife"
 * include codes from system AnimalTypesCS
 * exclude AnimalTypesCS#wildlife
 
-// Method 4: Dog breeds only - filtered inclusion
+// Dog breeds only - filtered inclusion
 ValueSet: DogBreedsVS
 Id: dog-breeds-vs
 Title: "Dog Breeds"
@@ -47,7 +46,7 @@ Description: "Available dog breeds in the registry"
 * include AnimalBreedsCS#poodle
 * include AnimalBreedsCS#mixed-dog
 
-// Method 5: Cat breeds only
+// Cat breeds only
 ValueSet: CatBreedsVS
 Id: cat-breeds-vs
 Title: "Cat Breeds"
@@ -60,7 +59,7 @@ Description: "Available cat breeds in the registry"
 * include AnimalBreedsCS#british-shorthair
 * include AnimalBreedsCS#mixed-cat
 
-// Method 6: All breeds - entire CodeSystem inclusion
+// All breeds - entire CodeSystem inclusion
 ValueSet: AnimalBreedsVS
 Id: animal-breeds-vs
 Title: "All Animal Breeds"
@@ -69,7 +68,7 @@ Description: "Complete list of all animal breeds in the registry"
 * ^experimental = false
 * include codes from system AnimalBreedsCS
 
-// Method 7: Conservation status with grouping
+// Conservation status with grouping
 ValueSet: ThreatenedSpeciesVS
 Id: threatened-species-vs
 Title: "Threatened Species"
@@ -81,7 +80,7 @@ Description: "Conservation statuses indicating species are at risk"
 * include ConservationStatusCS#EN "Endangered"
 * include ConservationStatusCS#CR "Critically Endangered"
 
-// Method 8: Complete conservation status
+// Complete conservation status
 ValueSet: ConservationStatusVS
 Id: conservation-status-vs
 Title: "Conservation Status"
@@ -90,7 +89,7 @@ Description: "All IUCN conservation status categories"
 * ^experimental = false
 * include codes from system ConservationStatusCS
 
-// Method 9: Mixed inclusion with external codes
+// Mixed inclusion with external codes
 ValueSet: AnimalIdentificationVS
 Id: animal-identification-vs
 Title: "Animal Identification Methods"

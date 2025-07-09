@@ -8,7 +8,10 @@ Description: "A simplified animal profile for teaching basic FSH concepts"
 * ^experimental = false
 
 // Required standard extension
-* extension contains http://hl7.org/fhir/StructureDefinition/patient-animal named animal 1..1
+// * extension contains http://hl7.org/fhir/StructureDefinition/patient-animal named animal 1..1
+
+// or this:
+* extension contains patient-animal named animal 1..1
 
 // Configure the standard animal extension
 * extension[animal].extension[species].valueCodeableConcept from AnimalTypesVS (required)

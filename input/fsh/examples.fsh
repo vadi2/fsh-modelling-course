@@ -2,15 +2,16 @@
 
 // Example: Simple basic animal
 Instance: SimpleAnimalExample
-InstanceOf: BasicAnimal
+InstanceOf: Animal
 Title: "Simple Animal Example"
 Description: "A minimal example with basic concepts"
 * active = true
 * gender = #female
 * birthDate = "2023-06-01"
 
-// Just the required standard extension
 * extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#rabbit "Rabbit"
+* extension[rescueDate].valueDate = "2023-08-15"
+
 
 // Weight observation for simple animal
 Instance: SimpleAnimalWeightObservation

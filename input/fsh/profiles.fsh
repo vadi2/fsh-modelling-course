@@ -25,12 +25,45 @@ Description: "A profile representing an animal in the registry system"
 * active = true
 * gender 1..1
 
-// Configure contact for caregivers
+* contact ^slicing.discriminator.type = #value
+* contact ^slicing.discriminator.path = "relationship"
+* contact ^slicing.rules = #open
+* contact ^slicing.description = "Slice contact by relationship type"
 * contact ^short = "Animal caregiver/owner contact information"
 * contact ^definition = "Contact information for the animal's caregiver, owner, or responsible party"
-* contact.relationship 1..*
-* contact.relationship ^short = "Relationship to animal"
-* contact.relationship ^definition = "The relationship of the contact to the animal (owner, caregiver, emergency contact, etc.)"
+
+// Define slices for different contact types
+* contact contains
+    owner 0..1 and
+    caregiver 0..* and
+    emergencyContact 0..1 and
+    veterinarian 0..*
+
+* contact[owner].relationship 1..1
+* contact[owner].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
+* contact[owner].name 1..1
+* contact[owner] ^short = "Animal owner"
+* contact[owner] ^definition = "The legal owner of the animal"
+
+* contact[caregiver].relationship 1..1
+* contact[caregiver].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#CAREGIVER "caregiver"
+* contact[caregiver].name 1..1
+* contact[caregiver] ^short = "Animal caregiver"
+* contact[caregiver] ^definition = "Person providing day-to-day care for the animal"
+
+* contact[emergencyContact].relationship 1..1
+* contact[emergencyContact].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#ECON "emergency contact"
+* contact[emergencyContact].name 1..1
+* contact[emergencyContact].telecom 1..*
+* contact[emergencyContact] ^short = "Emergency contact"
+* contact[emergencyContact] ^definition = "Person to contact in case of emergency"
+
+* contact[veterinarian].relationship 1..1
+* contact[veterinarian].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#DOCTOR "doctor"
+* contact[veterinarian].name 1..1
+* contact[veterinarian].telecom 1..*
+* contact[veterinarian] ^short = "Veterinarian contact"
+* contact[veterinarian] ^definition = "Veterinarian responsible for the animal's care"
 
 // Add constraints with explanations
 * gender ^short = "Animal sex"
@@ -55,8 +88,8 @@ Description: "A profile for domestic animals (pets)"
 * ^experimental = false
 
 * extension[animal].extension[species].valueCodeableConcept from DomesticAnimalsVS (required)
-* contact 1..*
-* contact.relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
+* contact[owner] 1..1
+* contact[owner].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
 * extension[neutered] 1..1
 * generalPractitioner 1..*
 
