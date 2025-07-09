@@ -41,14 +41,12 @@ Description: "A typical pet dog registration example"
 
 * extension[neutered].valueBoolean = true
 
-* contact[0].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
-* contact[0].name.text = "John Smith"
-* contact[0].telecom[0].system = #phone
-* contact[0].telecom[0].value = "555-123-4567"
-* contact[0].telecom[1].system = #email
-* contact[0].telecom[1].value = "john.smith@email.com"
+* contact[owner].name.text = "John Smith"
+* contact[owner].telecom[0].system = #phone
+* contact[owner].telecom[0].value = "555-123-4567"
+* contact[owner].telecom[1].system = #email
+* contact[owner].telecom[1].value = "john.smith@email.com"
 
-// Veterinarian
 * generalPractitioner = Reference(DrVetSmith)
 
 // Weight observation for Buddy
@@ -74,7 +72,6 @@ Description: "A rescued Persian cat with medical history"
 * birthDate = "2019-07-22"
 * name.text = "Whiskers"
 
-// Standard animal extension
 * extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#cat "Cat"
 * extension[animal].extension[breed].valueCodeableConcept = AnimalBreedsCS#persian "Persian"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#intact "Intact"
@@ -82,11 +79,10 @@ Description: "A rescued Persian cat with medical history"
 * extension[rescueDate].valueDate = "2023-01-10"
 * extension[neutered].valueBoolean = false
 
-// Use contact for shelter caregiver
-* contact[0].name.text = "City Animal Shelter"
-* contact[0].telecom[0].system = #phone
-* contact[0].telecom[0].value = "555-SHELTER"
-* contact[0].organization = Reference(AnimalShelter)
+* contact[emergencyContact].name.text = "City Animal Shelter"
+* contact[emergencyContact].telecom[0].system = #phone
+* contact[emergencyContact].telecom[0].value = "555-SHELTER"
+* contact[emergencyContact].organization = Reference(AnimalShelter)
 
 * generalPractitioner = Reference(DrVetJones)
 * managingOrganization = Reference(AnimalShelter)
@@ -114,10 +110,8 @@ Description: "An endangered bald eagle in wildlife rehabilitation"
 * birthDate = "2022-05-01"
 * name.text = "Liberty"
 
-// Standard animal extension
 * extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#wildlife "Wildlife"
 
-// Custom extensions
 * extension[rescueDate].valueDate = "2023-08-15"
 * modifierExtension[endangeredStatus].valueCodeableConcept = ConservationStatusCS#NT "Near Threatened"
 
@@ -139,19 +133,17 @@ Description: "A dog currently receiving veterinary treatment"
 * extension[animal].extension[breed].valueCodeableConcept = AnimalBreedsCS#mixed-dog "Mixed Breed Dog"
 * extension[animal].extension[genderStatus].valueCodeableConcept = http://hl7.org/fhir/animal-genderstatus#neutered "Neutered"
 
-// Required for veterinary patient
 * extension[neutered].valueBoolean = true
 
-// Use contact for family caregiver
-* contact[0].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
-* contact[0].name.text = "Johnson Family"
-* contact[0].telecom[0].system = #phone
-* contact[0].telecom[0].value = "555-987-6543"
-* contact[0].telecom[1].system = #email
-* contact[0].telecom[1].value = "johnson.family@email.com"
-* contact[0].address.line = "123 Main Street"
-* contact[0].address.city = "Anytown"
-* contact[0].address.state = "ST"
-* contact[0].address.postalCode = "12345"
+* contact[owner].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
+* contact[owner].name.text = "Johnson Family"
+* contact[owner].telecom[0].system = #phone
+* contact[owner].telecom[0].value = "555-987-6543"
+* contact[owner].telecom[1].system = #email
+* contact[owner].telecom[1].value = "johnson.family@email.com"
+* contact[owner].address.line = "123 Main Street"
+* contact[owner].address.city = "Anytown"
+* contact[owner].address.state = "ST"
+* contact[owner].address.postalCode = "12345"
 
 * generalPractitioner = Reference(DrVetSmith)

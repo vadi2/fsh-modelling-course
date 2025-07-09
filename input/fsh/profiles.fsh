@@ -35,9 +35,7 @@ Description: "A profile representing an animal in the registry system"
 // Define slices for different contact types
 * contact contains
     owner 0..1 and
-    caregiver 0..* and
-    emergencyContact 0..1 and
-    veterinarian 0..*
+    emergencyContact 0..1
 
 * contact[owner].relationship 1..1
 * contact[owner].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
@@ -45,25 +43,12 @@ Description: "A profile representing an animal in the registry system"
 * contact[owner] ^short = "Animal owner"
 * contact[owner] ^definition = "The legal owner of the animal"
 
-* contact[caregiver].relationship 1..1
-* contact[caregiver].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#CAREGIVER "caregiver"
-* contact[caregiver].name 1..1
-* contact[caregiver] ^short = "Animal caregiver"
-* contact[caregiver] ^definition = "Person providing day-to-day care for the animal"
-
 * contact[emergencyContact].relationship 1..1
 * contact[emergencyContact].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#ECON "emergency contact"
 * contact[emergencyContact].name 1..1
 * contact[emergencyContact].telecom 1..*
 * contact[emergencyContact] ^short = "Emergency contact"
 * contact[emergencyContact] ^definition = "Person to contact in case of emergency"
-
-* contact[veterinarian].relationship 1..1
-* contact[veterinarian].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#DOCTOR "doctor"
-* contact[veterinarian].name 1..1
-* contact[veterinarian].telecom 1..*
-* contact[veterinarian] ^short = "Veterinarian contact"
-* contact[veterinarian] ^definition = "Veterinarian responsible for the animal's care"
 
 // Add constraints with explanations
 * gender ^short = "Animal sex"
@@ -88,8 +73,6 @@ Description: "A profile for domestic animals (pets)"
 * ^experimental = false
 
 * extension[animal].extension[species].valueCodeableConcept from DomesticAnimalsVS (required)
-* contact[owner] 1..1
-* contact[owner].relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RESPRSN "responsible party"
 * extension[neutered] 1..1
 * generalPractitioner 1..*
 
