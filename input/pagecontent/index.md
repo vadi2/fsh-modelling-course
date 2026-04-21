@@ -30,3 +30,15 @@ Navigate through the menu to explore:
 - **Artifacts**: Generated FHIR resources
 
 Let's start building with FSH! 🐾
+
+## Dependencies
+
+{% include dependency-table.xhtml %}
+
+## Globals
+
+{% include globals-table.xhtml %}
+
+## IP statements
+
+{% include ip-statements.xhtml %}

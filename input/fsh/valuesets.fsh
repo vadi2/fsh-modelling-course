@@ -100,5 +100,5 @@ Description: "Methods for identifying animals, combining local and external code
 * include AnimalTypesCS#dog "Dog identification"
 * include AnimalTypesCS#cat "Cat identification"
 // External SNOMED codes (examples)
-* include $sct#397745006 "Medical identification tag"
+* include $sct#38472000 "Medical identification tag"
 * include $sct#261665006 "Unknown identification"

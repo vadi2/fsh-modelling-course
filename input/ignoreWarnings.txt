@@ -5,4 +5,5 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # Seems to be a publisher issue
-No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/designation-usage' 
+No definition could be found for URL value 'http://terminology.hl7.org/CodeSystem/designation-usage'
+

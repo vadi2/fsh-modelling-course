@@ -64,7 +64,7 @@ Title: "City Animal Shelter"
 Description: "Local animal shelter and rescue organization"
 * active = true
 * name = "City Animal Shelter"
-* type = http://terminology.hl7.org/CodeSystem/organization-type#other "Other"
+* type = http://terminology.hl7.org/CodeSystem/organization-type#cg "Community Group"
 * contact
   * address.line = "123 Rescue Lane"
   * address.city = "Anytown"
@@ -77,7 +77,7 @@ Title: "Wildlife Rehabilitation Center"
 Description: "Specialized wildlife rehabilitation facility"
 * active = true
 * name = "Regional Wildlife Rehabilitation Center"
-* type = http://terminology.hl7.org/CodeSystem/organization-type#other "Other"
+* type = http://terminology.hl7.org/CodeSystem/organization-type#cg "Community Group"
 * contact
   * address.line = "456 Nature Trail"
   * address.city = "Forest City"

@@ -24,6 +24,7 @@ Description: "Weight observation for the simple rabbit"
 * subject = Reference(SimpleAnimalExample)
 * effectiveDateTime = "2024-01-15"
 * valueQuantity = 2.1 'kg' "kg"
+* performer = Reference(DrVetSmith)
 
 // Example: Basic domestic dog
 Instance: BuddyTheGoldenRetriever
@@ -147,3 +148,54 @@ Description: "A dog currently receiving veterinary treatment"
 * contact[owner].address.postalCode = "12345"
 
 * generalPractitioner = Reference(DrVetSmith)
+
+// Example for BasicAnimal profile
+Instance: NibblesTheRabbit
+InstanceOf: BasicAnimal
+Title: "Nibbles - Basic Animal"
+Description: "Minimal example demonstrating the teaching BasicAnimal profile"
+* active = true
+* gender = #female
+* birthDate = "2022-04-10"
+* name.text = "Nibbles"
+* extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#rabbit "Rabbit"
+* generalPractitioner = Reference(DrVetJones)
+
+// Example for AnimalWithValidation profile
+Instance: ValidatedAnimalExample
+InstanceOf: AnimalWithValidation
+Title: "Validated Animal"
+Description: "Example demonstrating the AnimalWithValidation profile and its birthDate invariant"
+* active = true
+* gender = #male
+* birthDate = "2021-09-12"
+* name.text = "Scout"
+* extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#dog "Dog"
+* generalPractitioner = Reference(DrVetSmith)
+
+// Example demonstrating standalone AnimalSpecies, AnimalCharacteristics,
+// AnimalCaregiver, and VeterinaryHistory extensions on a plain Patient
+Instance: LunaWithAllExtensions
+InstanceOf: Patient
+Usage: #example
+Title: "Luna - Extensions Showcase"
+Description: "Plain Patient exercising the standalone example extensions"
+* active = true
+* gender = #female
+* birthDate = "2020-02-29"
+* name.text = "Luna"
+
+* extension[AnimalSpecies].valueCodeableConcept = AnimalTypesCS#cat "Cat"
+
+* extension[AnimalCharacteristics].extension[breed].valueCodeableConcept = AnimalBreedsCS#siamese "Siamese"
+* extension[AnimalCharacteristics].extension[color].valueString = "Cream with brown points"
+* extension[AnimalCharacteristics].extension[markings].valueString = "White blaze on chest"
+* extension[AnimalCharacteristics].extension[microchipId].valueString = "985112004567890"
+
+* extension[AnimalCaregiver].valueReference = Reference(JohnSmithOwner)
+
+* extension[VeterinaryHistory].extension[lastCheckup].valueDate = "2024-02-14"
+* extension[VeterinaryHistory].extension[vaccinations].valueString = "FVRCP, Rabies up to date"
+* extension[VeterinaryHistory].extension[chronicConditions].valueString = "Mild asthma"
+* extension[VeterinaryHistory].extension[allergies].valueString = "Chicken"
+* extension[VeterinaryHistory].extension[medications].valueString = "Fluticasone inhaler"
