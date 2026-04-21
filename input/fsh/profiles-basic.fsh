@@ -1,8 +1,8 @@
 // Simple profile demonstrating basic constraints
-Profile: BasicAnimal
+Profile: BasicAnimalDemo
 Parent: Patient
-Id: basic-animal
-Title: "Basic Animal (Teaching Example)"
+Id: basic-animal-demo
+Title: "Basic Animal Demo (Teaching Example)"
 Description: "A simplified animal profile for teaching basic FSH concepts"
 * ^status = #active
 * ^experimental = false

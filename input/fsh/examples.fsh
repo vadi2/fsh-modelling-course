@@ -2,7 +2,7 @@
 
 // Example: Simple basic animal
 Instance: SimpleAnimalExample
-InstanceOf: Animal
+InstanceOf: BasicAnimal
 Title: "Simple Animal Example"
 Description: "A minimal example with basic concepts"
 * active = true
@@ -114,10 +114,23 @@ Description: "An endangered bald eagle in wildlife rehabilitation"
 * extension[animal].extension[species].valueCodeableConcept = AnimalTypesCS#wildlife "Wildlife"
 
 * extension[rescueDate].valueDate = "2023-08-15"
-* modifierExtension[endangeredStatus].valueCodeableConcept = ConservationStatusCS#NT "Near Threatened"
+* modifierExtension[endangeredStatus].valueBoolean = true
 
 * generalPractitioner = Reference(DrWildlifeVet)
 * managingOrganization = Reference(WildlifeRehabCenter)
+
+// Weight observation for Liberty
+Instance: EagleWeightObservation
+InstanceOf: Observation
+Title: "Liberty's Weight"
+Description: "Current weight observation for Liberty the bald eagle"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
+* code = http://loinc.org#29463-7 "Body weight"
+* subject = Reference(EagleInRehab)
+* effectiveDateTime = "2024-02-05"
+* valueQuantity = 4.8 'kg' "kg"
+* performer = Reference(DrWildlifeVet)
 
 // Example: Veterinary patient
 Instance: MaxInTreatment
@@ -149,11 +162,24 @@ Description: "A dog currently receiving veterinary treatment"
 
 * generalPractitioner = Reference(DrVetSmith)
 
-// Example for BasicAnimal profile
+// Weight observation for Max
+Instance: MaxWeightObservation
+InstanceOf: Observation
+Title: "Max's Weight"
+Description: "Current weight observation for Max"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
+* code = http://loinc.org#29463-7 "Body weight"
+* subject = Reference(MaxInTreatment)
+* effectiveDateTime = "2024-01-22"
+* valueQuantity = 24 'kg' "kg"
+* performer = Reference(DrVetSmith)
+
+// Example for BasicAnimalDemo profile
 Instance: NibblesTheRabbit
-InstanceOf: BasicAnimal
-Title: "Nibbles - Basic Animal"
-Description: "Minimal example demonstrating the teaching BasicAnimal profile"
+InstanceOf: BasicAnimalDemo
+Title: "Nibbles - Basic Animal Demo"
+Description: "Minimal example demonstrating the teaching BasicAnimalDemo profile"
 * active = true
 * gender = #female
 * birthDate = "2022-04-10"

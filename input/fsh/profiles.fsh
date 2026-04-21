@@ -1,8 +1,8 @@
-// Main Animal Profile based on Patient
-Profile: Animal
+// Main BasicAnimal Profile based on Patient
+Profile: BasicAnimal
 Parent: Patient
-Id: animal
-Title: "Animal"
+Id: basic-animal
+Title: "Basic Animal"
 Description: "A profile representing an animal in the registry system"
 * ^status = #active
 * ^experimental = false
@@ -65,7 +65,7 @@ Description: "A profile representing an animal in the registry system"
 
 // Specialized profiles for different animal types
 Profile: DomesticAnimal
-Parent: Animal
+Parent: BasicAnimal
 Id: domestic-animal
 Title: "Domestic Animal"
 Description: "A profile for domestic animals (pets)"
@@ -77,7 +77,7 @@ Description: "A profile for domestic animals (pets)"
 * generalPractitioner 1..*
 
 Profile: WildlifeAnimal
-Parent: Animal
+Parent: BasicAnimal
 Id: wildlife-animal
 Title: "Wildlife Animal"
 Description: "A profile for wildlife animals in conservation or rehabilitation"
@@ -94,7 +94,7 @@ Description: "A profile for wildlife animals in conservation or rehabilitation"
 
 // Profile for animals in veterinary care
 Profile: VeterinaryPatient
-Parent: Animal
+Parent: BasicAnimal
 Id: veterinary-patient
 Title: "Veterinary Patient"
 Description: "An animal currently receiving veterinary care"
@@ -106,7 +106,7 @@ Description: "An animal currently receiving veterinary care"
 
 // Constraint examples with invariants
 Profile: AnimalWithValidation
-Parent: Animal
+Parent: BasicAnimal
 Id: animal-with-validation
 Title: "Animal with Validation Rules"
 Description: "Demonstrates custom validation rules for animals"

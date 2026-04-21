@@ -51,15 +51,14 @@ Description: "Physical characteristics and attributes of the animal"
 Extension: EndangeredStatus
 Id: endangered-status
 Title: "Endangered Status (modifier)"
-Description: "Conservation status that may affect how the animal is handled"
+Description: "Indicates the animal is endangered and must be handled with care"
 * ^status = #active
 * ^experimental = false
 * ^context.type = #element
 * ^context.expression = "Patient"
 * . ^isModifier = true
-* . ^isModifierReason = "Indicates the animal is under special conservation measures"
-* value[x] only CodeableConcept
-* valueCodeableConcept from ConservationStatusVS (required)
+* . ^isModifierReason = "Indicates the animal is endangered and must be handled with care"
+* value[x] only boolean
 
 // Extension with Reference datatype
 // Not used, for example purposes only
