@@ -46,21 +46,3 @@ Description: "A code system defining different breeds of animals"
 
 // Other
 * #unknown-breed "Unknown Breed" "Breed is unknown or not specified"
-
-CodeSystem: ConservationStatusCS
-Id: conservation-status-cs
-Title: "Conservation Status"
-Description: "Conservation status categories based on IUCN Red List classifications"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-
-* #LC "Least Concern" "Species is widespread and abundant"
-* #NT "Near Threatened" "Species is close to qualifying for threatened category"
-* #VU "Vulnerable" "Species is facing high risk of extinction in wild"
-* #EN "Endangered" "Species is facing very high risk of extinction in wild"
-* #CR "Critically Endangered" "Species is facing extremely high risk of extinction in wild"
-* #EW "Extinct in the Wild" "Species survives only in captivity"
-* #EX "Extinct" "No known individuals remaining"
-* #DD "Data Deficient" "Inadequate information to make assessment"
-* #NE "Not Evaluated" "Species has not been evaluated against criteria"

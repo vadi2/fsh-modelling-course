@@ -68,27 +68,6 @@ Description: "Complete list of all animal breeds in the registry"
 * ^experimental = false
 * include codes from system AnimalBreedsCS
 
-// Conservation status with grouping
-ValueSet: ThreatenedSpeciesVS
-Id: threatened-species-vs
-Title: "Threatened Species"
-Description: "Conservation statuses indicating species are at risk"
-* ^status = #active
-* ^experimental = false
-* include ConservationStatusCS#NT "Near Threatened"
-* include ConservationStatusCS#VU "Vulnerable"
-* include ConservationStatusCS#EN "Endangered"
-* include ConservationStatusCS#CR "Critically Endangered"
-
-// Complete conservation status
-ValueSet: ConservationStatusVS
-Id: conservation-status-vs
-Title: "Conservation Status"
-Description: "All IUCN conservation status categories"
-* ^status = #active
-* ^experimental = false
-* include codes from system ConservationStatusCS
-
 // Mixed inclusion with external codes
 ValueSet: AnimalIdentificationVS
 Id: animal-identification-vs
