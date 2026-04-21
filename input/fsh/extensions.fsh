@@ -96,7 +96,7 @@ Description: "Whether the animal has been spayed or neutered"
 * value[x] only boolean
 
 // Nested complex extension
-// Not used, for example purposes only. This should be done with proper FHIR resources instead.
+// Not used, for example purposes only
 Extension: VeterinaryHistory
 Id: veterinary-history
 Title: "Veterinary History"
