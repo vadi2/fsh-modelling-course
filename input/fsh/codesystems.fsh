@@ -24,25 +24,26 @@ Description: "A code system defining different breeds of animals"
 * ^experimental = false
 * ^caseSensitive = true
 
-// Dog breeds
-* #golden-retriever "Golden Retriever" "Golden Retriever dog breed"
-* #labrador "Labrador" "Labrador Retriever dog breed"
-* #german-shepherd "German Shepherd" "German Shepherd dog breed"
-* #bulldog "Bulldog" "English Bulldog breed"
-* #poodle "Poodle" "Poodle dog breed"
-* #mixed-dog "Mixed Breed Dog" "Mixed breed or crossbred dog"
+* #dogs "Dog breeds"
+  * #golden-retriever "Golden Retriever" "Golden Retriever dog breed"
+  * #labrador "Labrador" "Labrador Retriever dog breed"
+  * #german-shepherd "German Shepherd" "German Shepherd dog breed"
+  * #bulldog "Bulldog" "English Bulldog breed"
+  * #poodle "Poodle" "Poodle dog breed"
+  * #mixed-dog "Mixed Breed Dog" "Mixed breed or crossbred dog"
 
-// Cat breeds
-* #persian "Persian" "Persian cat breed"
-* #siamese "Siamese" "Siamese cat breed"
-* #maine-coon "Maine Coon" "Maine Coon cat breed"
-* #british-shorthair "British Shorthair" "British Shorthair cat breed"
-* #mixed-cat "Mixed Breed Cat" "Mixed breed or crossbred cat"
+* #cats "Cat breeds"
+  * #persian "Persian" "Persian cat breed"
+  * #siamese "Siamese" "Siamese cat breed"
+  * #maine-coon "Maine Coon" "Maine Coon cat breed"
+  * #british-shorthair "British Shorthair" "British Shorthair cat breed"
+  * #mixed-cat "Mixed Breed Cat" "Mixed breed or crossbred cat"
 
 // Bird types
-* #parrot "Parrot" "Various parrot species"
-* #canary "Canary" "Canary bird"
-* #cockatiel "Cockatiel" "Cockatiel bird"
+* ##birds "Bird breeds"
+  * #parrot "Parrot" "Various parrot species"
+  * #canary "Canary" "Canary bird"
+  * #cockatiel "Cockatiel" "Cockatiel bird"
 
 // Other
 * #unknown-breed "Unknown Breed" "Breed is unknown or not specified"
